@@ -7,15 +7,15 @@ PoC for cloud provider fws using OpenC2 SLPF
 1. Build/run Docker OpenDXL broker image
    * https://github.com/opendxl/opendxl-broker
 2. cd consumer
-2. Build Docker consumer image
-3. Provision OpenDXL client certs in consumer
+3. Build Docker consumer image
+4. Provision OpenDXL client certs in consumer
    * python3 -m dxlclient provisionconfig config localhost certs
-4. Generate/install cloud credentials
+5. Generate/install cloud credentials
    * Recommend create custom/least priviledged role assigned to dedicated principal
-5. Start per-cloud docker image
+6. Start per-cloud docker image
    * docker run -d -v /host/dir/to/config:/opt/cloudslpf-config opendxl-cloudslpf:latest [aws|gcp|az]
-6. cd ../producer
-6. Run producer script against openc2 json cmd file
+7. cd ../producer
+8. Run producer script against openc2 json cmd file
 
 Notes
 ==========================
