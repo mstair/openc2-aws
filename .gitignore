@@ -1,9 +1,11 @@
-*.pyc 
-__pycache__/
-build
-.coverage
-lycan.egg-info
+/ __pycache__/
+.idea
+*.py[cod]
 .DS_Store
-.AppleDouble
-.LSOverride
-*.swp
+aws_credentials
+az_credentials
+gcp_credentials
+ca-bundle.crt
+client.crt
+client.csr
+client.key

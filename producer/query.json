@@ -1,0 +1,11 @@
+{
+  "action": "query",
+  "target": {
+    "features": ["pairs"]
+  },
+  "actuator": {
+    "slpf": {
+      "named_group": "cloud"
+    }
+  }
+}

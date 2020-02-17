@@ -1,0 +1,34 @@
+PoC for cloud provider fws using OpenC2 SLPF
+-GCP firewalls
+-AWS NACLs
+-Azure NSGs
+==========================
+
+1. Build/run Docker OpenDXL broker image
+   * https://github.com/opendxl/opendxl-broker
+2. cd consumer
+2. Build Docker consumer image
+3. Provision OpenDXL client certs in consumer
+   * python3 -m dxlclient provisionconfig config localhost certs
+4. Generate/install cloud credentials
+   * Recommend create custom/least priviledged role assigned to dedicated principal
+5. Start per-cloud docker image
+   * docker run -d -v /host/dir/to/config:/opt/cloudslpf-config opendxl-cloudslpf:latest [aws|gcp|az]
+6. cd ../producer
+6. Run producer script against openc2 json cmd file
+
+Notes
+==========================
+* GCP/Azure fws are stateful
+* Rule names are defined as openc2+uuid.uuid4()
+* Command events are published to /openc2/event/slpf/command/$requestid topic
+* Response events are published to /openc2/event/slpf/response/$requestid topic
+
+TODOs
+==========================
+* AWS security groups. Stateful/allow only. Require ip_net/connection target to delete
+* Handle 'both' direction specifier
+* Add update action
+* Responses are not valid/complete
+* All target/actuator permutations not validated
+* Support multiple accounts/subs/projects

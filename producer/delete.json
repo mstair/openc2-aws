@@ -1,0 +1,11 @@
+{
+  "action": "delete",
+  "target": {
+    "slpf:rule_number": 600
+  },
+  "actuator": {
+    "slpf": {
+      "named_group": "cloud"
+    }
+  }
+}

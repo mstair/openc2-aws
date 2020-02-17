@@ -1,0 +1,6 @@
+openc2>1.0.1
+dxlclient
+google-api-python-client
+boto3
+azure-core
+azure-mgmt-network

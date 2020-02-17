@@ -1,0 +1,17 @@
+{
+  "action": "deny",
+  "target": {
+    "ipv4_connection":{
+        "src_addr": "1.1.1.1/32"
+    }
+  },
+  "actuator": {
+    "slpf": {
+      "asset_id": "cloud"
+    }
+  },
+  "args": {
+    "direction": "egress",
+    "insert_rule": 120
+  }
+}

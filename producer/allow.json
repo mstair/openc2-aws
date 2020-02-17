@@ -1,0 +1,21 @@
+{
+  "action": "allow",
+  "target": {
+    "ipv4_connection":{
+        "src_addr":"1.2.3.10",
+        "protocol": "tcp",
+        "dst_port": "443"
+    }
+  },
+  "actuator": {
+    "slpf": {
+      "named_group": "cloud"
+    }
+  },
+  "args": {
+    "response_requested":"complete",
+    "slpf": {
+        "insert_rule": 600
+    }
+  }
+}
